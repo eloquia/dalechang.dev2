@@ -1,113 +1,214 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
+import ExternalLink from "@/components/external-link";
+import WorkItemComponent, { WorkItem } from '@/components/work-item';
+import DividerWithTextComponent from '@/components/divider-with-text';
+import ProjectItemComponent, { ProjectItem } from '@/components/project-item';
+import UntitledFinanceApp from '@/components/untitiled-finance-app';
+
+const profileImageStyle = {
+  borderRadius: '50%',
+  border: '1px solid #F1F5F9',
+}
+
+const climbImageStyle = {
+  
+}
+
+const workItems: WorkItem[] = [
+  {
+    companyName: 'SAIC, Koverse',
+    companyLink: 'https://www.saic.com/',
+    jobTitle: 'Sr Software Engineer',
+    startYear: 2023,
+    notableTechnologies: [
+      { displayText: 'React', href: 'https://react.dev/' },
+      { displayText: 'TypeScript', href: 'https://www.typescriptlang.org/' },
+      { displayText: 'Java', href: 'https://www.java.com/en/' },
+      { displayText: 'Spring', href: 'https://spring.io/' },
+      { displayText: 'Docker', href: 'https://www.docker.com/' },
+      { displayText: 'Kubernetes', href: 'https://kubernetes.io/' },
+      { displayText: 'Azure', href: 'https://azure.microsoft.com/' },
+      { displayText: 'Helm', href: 'https://helm.sh/' }
+    ],
+    description: 'Build, research, and test experimental solutions for DARPA.',
+  },
+  {
+    companyName: 'Innovim',
+    companyLink: 'https://innovim.com/',
+    jobTitle: 'Tech Lead',
+    otherTitles: ['Sr Software Engineer'],
+    startYear: 2022,
+    endYear: 2023,
+    notableTechnologies: [
+      { displayText: 'React', href: 'https://react.dev/' },
+      { displayText: 'TypeScript', href: 'https://www.typescriptlang.org/' },
+      { displayText: 'GitLab', href: 'https://about.gitlab.com/' }
+    ],
+    description: 'Built and maintained UX-tracking software to understand and improve how airmen use technology. Eventually lead this team within a few months of joining to fill the lead/PM role.',
+  },
+  {
+    companyName: 'Cigna',
+    companyLink: 'https://www.cigna.com/',
+    jobTitle: 'Sr Software Engineer',
+    startYear: 2019,
+    endYear: 2022,
+    notableTechnologies: [
+      { displayText: 'Angular', href: '' },
+      { displayText: 'TypeScript', href: 'https://www.typescriptlang.org/' },
+      { displayText: 'Java', href: 'https://www.java.com/en/' },
+      { displayText: 'Spring', href: 'https://spring.io/' },
+      { displayText: 'Docker', href: 'https://www.docker.com/' },
+      { displayText: 'AWS', href: 'https://aws.amazon.com/' }
+    ],
+    description: 'Lead, designed, and engineered internal financial reporting applications and workflows. Additionally I also frequently lead complex software upgrade deployments.',
+  },
+  {
+    companyName: 'Leidos',
+    companyLink: 'https://www.leidos.com/',
+    jobTitle: 'Data Integration Engineer',
+    startYear: 2018,
+    endYear: 2019,
+    notableTechnologies: [
+      { displayText: 'JavaScript', href: '' },
+      { displayText: 'Java', href: 'https://www.java.com/en/' },
+      { displayText: 'Spark', href: 'https://spark.apache.org/' },
+      { displayText: 'Hadoop', href: 'https://hadoop.apache.org/' }
+    ],
+    description: 'Developed CAADS, a data science platform that enabled government agencies to manage and analyze their data. Also I prototyped and presented a variety of best-of-breed solutions for capturing new lines of business.',
+  },
+  {
+    companyName: 'Leidos',
+    companyLink: 'https://www.leidos.com/',
+    jobTitle: 'Text Analytics & Software Analyst',
+    startYear: 2016,
+    endYear: 2018,
+    notableTechnologies: [
+      { displayText: 'Java', href: 'https://www.java.com/en/' },
+      { displayText: 'Spring', href: 'https://spring.io/' },
+      { displayText: 'Spark', href: 'https://spark.apache.org/' },
+      { displayText: 'Hadoop', href: 'https://hadoop.apache.org/' }
+    ],
+    description: 'Designed and developed features for COBRA, an e-discovery platform for underfunded government agencies to help with civil litigation.',
+  }
+]
+
+const latestProjects: ProjectItem[] = [
+  {
+    projectName: 'Kiki\'s Scavenger Hunt',
+    projectLink: 'https://github.com/eloquia/kikis-adventure',
+    startYear: 2024,
+    isCompleted: true,
+    notableTechnologies: [
+      { displayText: 'TypeScript', href: 'https://www.typescriptlang.org/' },
+      { displayText: 'Phaser 3', href: 'https://phaser.io/' },
+      { displayText: 'CapacitorJS', href: 'https://capacitorjs.com/' },
+      { displayText: 'iOS', href: 'https://www.apple.com/ios/' }
+    ],
+    description: 'Developed a visual novel game in 6 weeks using Phaser 3 and various LLM prompting techniques.',
+    projectImageLink: '/images/kikis-scavenger-hunt.png',
+    projectImageAlt: 'Screenshot of Kiki\'s Scavenger Hunt game',
+    projectImageType: 'mobile'
+  },
+  {
+    projectName: 'MIND Lab',
+    projectLink: 'http://mindlab.cs.umd.edu/',
+    startYear: 2020,
+    isCompleted: false,
+    notableTechnologies: [
+      { displayText: 'Java', href: 'https://www.java.com/en/' },
+      { displayText: 'Spring', href: 'https://spring.io/' },
+      { displayText: 'Spark', href: 'https://spark.apache.org/' },
+      { displayText: 'Hadoop', href: 'https://hadoop.apache.org/' }
+    ],
+    description: 'Manage and mentor undergraduate interns on fundamentals of full-stack development and also CI/CD.',
+    projectImageType: 'desktop',
+    projectImageLink: '/images/mindlab-website.png',
+    projectImageAlt: 'Screenshot of MIND Lab website',
+  },
+]
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <>
+      <div className="min-h-screen flex flex-col justify-center items-center lg:col-span-1 lg:row-span-2 lg:self-start lg:justify-start lg:sticky lg:top-20">
+          <div className="flex flex-col max-w-md">
+            <h2 className="mb-3 text-2.5xl font-semibold text-slate-100 place-self-center">Dale Chang</h2>
+            <h3 className="mb-2 text-2xl text-slate-100 place-self-center">Senior Software Engineer</h3>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src="/images/Dale Chang Profile Costco.jpg"
+              width={300}
+              height={300}
+              alt="Picture of Dale Chang"
+              style={profileImageStyle}
+              className="mb-8 mt-4 place-self-center"
             />
-          </a>
+            <a
+              href="/files/employee-fiduciary-yearly-statement.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-primary rounded-lg text-slate-100 place-self-center hover:bg-indigo-300 hover:text-slate-800"
+            >
+              Get my Resume
+            </a>
+            <p className={`my-8 opacity-50 text-balance text-center`}>
+              I build scalable tech solutions.
+            </p>
+          </div>
+      </div>
+
+      <div className="lg-content w-screen flex flex-col items-center mb-16 lg:grid-cols-1 lg:w-96">
+
+        <div className="about-content flex flex-col mb-16 xl:col-span-1">
+          <DividerWithTextComponent text="About" />
+          <article className="flex flex-col gap-4 items-center lg:items-start">
+            <div className="w-80 lg:w-full">
+              <p className="text-slate-400 sm:text-lg">I&apos;ve always been interested in building things, from legos to delicious recipes. Before my software career, I graduated in physics because I wanted to know how everything works. Now, I&apos;ve worked in a Fortune 20 company, for a start up, and on various government contracts.</p>
+            </div>
+            <div className="w-80 lg:w-full">
+              <p className="text-slate-400 sm:text-lg">From the very start, I&apos;ve worked my way up to dreaming of, developing, and delegating large-scale features. I love both green-field and brown-field opportunities and I enjoy finding elegant solutions to complex problems.</p>
+            </div>
+            <div className="w-80 lg:w-full">
+              <p className="text-slate-400 sm:text-lg">When I&apos;m not prgramming, I enjoy <Link className="text-slate-100 hover:underline hover:text-slate-400" href="/climbs">climbing</Link>, learning German, tending my knowledge garden in <ExternalLink externalLink="https://obsidian.md" displayText="Obsidian" />,  cooking, and spending time with my partner.</p>
+            </div>
+          </article>
         </div>
+
+        <div className="work-content sm:mb-16">
+          <DividerWithTextComponent text="Work" />
+          <article className="flex flex-col gap-4 items-center">
+            <WorkItemComponent {...workItems[0]} />
+            <WorkItemComponent {...workItems[1]} />
+            <WorkItemComponent {...workItems[2]} />
+            <WorkItemComponent {...workItems[3]} />
+            <WorkItemComponent {...workItems[4]} />
+          </article>
+        </div>
+
+        <div className="climbing-content mb-16 xl:col-span-2">
+          <DividerWithTextComponent text="Latest Climb" />
+          <article className="climb-container flex flex-col items-center">
+            <Image src="/images/climb.jpg" alt="Climb" width={300} height={300} style={climbImageStyle} />
+            <h1 className='w-80 text-slate-100 mb-2 font-bold lg:w-96'>&quot;Blue Chip Stonks&quot;</h1>
+            <p className="w-80 text-slate-400 lg:w-96">Vert wall climbing with tiny crimps and tiny footholds. The tiny footholds make it harder to find a stable body position to make it easier to move to the penultimate hold.</p>
+          </article>
+        </div>
+
+        <div className="latest-projects-content mb-16 w-screen flex flex-col items-center lg:w-50vw xl:col-span-2">
+          <div className="relative mb-8 w-80">
+            <div className="absolute inset-0 flex items-center" aria-hidden="true">
+              <div className="w-full border-t border-slate-500"></div>
+            </div>
+            <div className="relative flex justify-start sm:justify-center">
+              <span className="font-mono bg-slate-900 pr-3 text-base font-semibold leading-6 text-gray-200 sm:pl-3">Latest Projects</span>
+            </div>
+          </div>
+          <ProjectItemComponent {...latestProjects[0]} />
+          <ProjectItemComponent {...latestProjects[1]} />
+          <UntitledFinanceApp />
+        </div>
+
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }
