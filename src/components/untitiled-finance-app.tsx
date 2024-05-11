@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import BadgeCollectionComponent, { BadgeProps } from './badge-collection'
 
+import ios17WallpaperDark from '../images/iOS-17-wallpaper-dark.png'
+import kofferAppPic from '../images/untitled-personal-finance-app-widget.png'
+
 const projectImageStyle = {
   // width: 320,
   height: 'auto'
@@ -32,18 +35,18 @@ export default function UntitledFinanceApp() {
         <div className="display">
           <div className="artboard artboard-demo phone-1 relative">
               <Image
-                src="/images/iOS-17-wallpaper-dark.png"
+                src={ios17WallpaperDark}
                 alt="Image of Untitled Personal Finance App Home Screen Widget"
-                width="0"
-                height="0"
+                // width="0"
+                // height="0"
                 sizes="100vw"
                 className="h-auto w-full"
               />
               <Image
-                src="/images/8.png"
+                src={kofferAppPic}
                 alt="Image of Untitled Personal Finance App Home Screen Widget"
-                width="0"
-                height="0"
+                // width="0"
+                // height="0"
                 sizes="40vw"
                 className="h-auto w-32 absolute top-10 left-5"
               />

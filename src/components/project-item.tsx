@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import BadgeCollectionComponent, { BadgeProps } from './badge-collection'
 
 const projectImageStyle = {
@@ -7,8 +7,8 @@ const projectImageStyle = {
 
 export default function ProjectItemComponent(props: ProjectItem) {
   return (
-    <div className="mb-12 flex flex-col gap-8 sm:mb-16 sm:gap-0 items-center">
-      <div className="text-content w-80 sm:mb-8">
+    <div className="mb-12 flex flex-col gap-8 items-center sm:mb-16 sm:gap-0">
+      <div className="text-content w-80 sm:mb-8 lg:w-96">
         <div className="flex flex-row items-start">
           <p className="text-2xl text-slate-100">{props.projectName}</p>
         </div>
@@ -28,7 +28,7 @@ export default function ProjectItemComponent(props: ProjectItem) {
           <div className="display">
             <div className="artboard artboard-demo phone-1">
               <Image
-                src={props.projectImageLink}
+                src={props.projectImage}
                 alt={props.projectImageAlt}
                 width="0"
                 height="0"
@@ -46,7 +46,7 @@ export default function ProjectItemComponent(props: ProjectItem) {
           </div>
           <div className="flex justify-center bg-base-200">
             <Image
-              src={props.projectImageLink}
+              src={props.projectImage}
               alt={props.projectImageAlt}
               width="0"
               height="0"
@@ -68,7 +68,7 @@ export type ProjectItem = {
   projectLink: string
   description: string
   notableTechnologies: BadgeProps[]
-  projectImageLink: string
+  projectImage: StaticImageData
   projectImageAlt: string
   projectImageType: 'mobile' | 'desktop'
 }
