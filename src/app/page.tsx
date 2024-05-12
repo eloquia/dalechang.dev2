@@ -149,7 +149,7 @@ export default function Home() {
             className="mb-8 mt-4 place-self-center"
           />
           <a
-            href="../files/dale-chang-software-engineer-resume.pdf"
+            href="/files/dale-chang-software-engineer-resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-primary rounded-lg text-slate-100 place-self-center hover:bg-indigo-300 hover:text-slate-800"
