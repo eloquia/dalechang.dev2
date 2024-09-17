@@ -138,8 +138,8 @@ export default function Home() {
     <>
       <div className="min-h-screen flex flex-col justify-center items-center lg:col-span-1 lg:row-span-2 lg:self-start lg:justify-start lg:items-end lg:sticky lg:top-20 lg:mr-24">
         <div className="flex flex-col max-w-md">
-          <h2 className="mb-3 text-2.5xl font-semibold text-slate-100 place-self-center">Dale Chang</h2>
-          <h3 className="mb-2 text-2xl text-slate-100 place-self-center">Senior Software Engineer</h3>
+          <h2 className="mb-3 text-2.5xl font-semibold text-slate-700 dark:text-slate-100 place-self-center">Dale Chang</h2>
+          <h3 className="mb-2 text-2xl text-slate-700 dark:text-slate-100 place-self-center">Senior Software Engineer</h3>
           <Image
             src={profilePic}
             width={300}
@@ -157,7 +157,7 @@ export default function Home() {
           >
             Get my Resume
           </a>
-          <p className={`my-8 opacity-50 text-balance text-center`}>
+          <p className={`my-8 opacity-50 text-balance text-center text-slate-700`}>
             I build scalable tech solutions.
           </p>
         </div>
@@ -169,13 +169,13 @@ export default function Home() {
           <DividerWithTextComponent text="About" />
           <article className="flex flex-col gap-4 items-center lg:items-start">
             <div className="w-80 lg:w-full">
-              <p className="text-slate-400 sm:text-lg">For all my life I&apos;ve always been interested in creating things, from building legos as a child to cooking delicious recipes. Before my software career, I graduated in physics because I wanted to know how everything works. Now, I&apos;ve worked in a Fortune 20 company, for a start up, and on various government contracts.</p>
+              <p className="text-slate-800 dark:text-slate-400 sm:text-lg">For all my life I&apos;ve always been interested in creating things, from building legos as a child to cooking delicious recipes. Before my software career, I graduated in physics because I wanted to know how everything works. Now, I&apos;ve worked in a Fortune 20 company, for a start up, and on various government contracts.</p>
             </div>
             <div className="w-80 lg:w-full">
-              <p className="text-slate-400 sm:text-lg">From the very start, I&apos;ve worked my way up to dreaming of, developing, and delegating large-scale features. I love both green-field and brown-field opportunities and I enjoy finding elegant solutions to complex problems.</p>
+              <p className="text-slate-800 dark:text-slate-400 sm:text-lg">From the very start, I&apos;ve worked my way up to dreaming of, developing, and delegating large-scale features. I love both green-field and brown-field opportunities and I enjoy finding elegant solutions to complex problems.</p>
             </div>
             <div className="w-80 lg:w-full">
-              <p className="text-slate-400 sm:text-lg">When I&apos;m not prgramming, I enjoy climbing, learning German, tending my knowledge garden in <ExternalLink externalLink="https://obsidian.md" displayText="Obsidian" />,  cooking, and spending time with my partner.</p>
+              <p className="text-slate-800 dark:text-slate-400 sm:text-lg">When I&apos;m not prgramming, I enjoy climbing, learning German, tending my knowledge garden in <ExternalLink externalLink="https://obsidian.md" displayText="Obsidian" />,  cooking, and spending time with my partner.</p>
             </div>
           </article>
         </div>
@@ -202,8 +202,8 @@ export default function Home() {
               style={climbImageStyle}
               className="mb-8"
             />
-            <h1 className='w-80 text-slate-100 mb-2 font-bold lg:w-96'>Pink Boulder</h1>
-            <p className="w-80 text-slate-400 lg:w-96">Vert wall climb with tiny-moderate crimps and tiny footholds. This climb really works my body tension because I need to push through my feet to make the holds better. It also challenges my lats because I need to pull my weight closer to the wall to feel more secure.</p>
+            <h1 className='w-80 text-slate-700 dark:text-slate-100 mb-2 font-bold lg:w-96'>Pink Boulder</h1>
+            <p className="w-80 text-slate-700 dark:text-slate-400 lg:w-96">Vert wall climb with tiny-moderate crimps and tiny footholds. This climb really works my body tension because I need to push through my feet to make the holds better. It also challenges my lats because I need to pull my weight closer to the wall to feel more secure.</p>
           </article>
         </div>
 

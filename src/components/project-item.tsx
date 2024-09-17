@@ -15,11 +15,11 @@ export default function ProjectItemComponent(props: ProjectItem) {
         <div className="project-dates flex flex-row gap-1">
           {
             props.isCompleted
-              ? <p className="text-sm italic text-slate-400 mb-2">{props.startYear}, Finished</p>
-              : <p className="text-sm italic text-slate-400 mb-2">{props.startYear} - Ongoing</p>
+              ? <p className="text-sm italic text-slate-700 dark:text-slate-400 mb-2">{props.startYear}, Finished</p>
+              : <p className="text-sm italic text-slate-700 dark:text-slate-400 mb-2">{props.startYear} - Ongoing</p>
           }
         </div>
-        <p className="mb-4 text-slate-400">{props.description}</p>
+        <p className="mb-4 text-slate-700 dark:text-slate-400">{props.description}</p>
         <BadgeCollectionComponent badges={props.notableTechnologies} />
       </div>
       {

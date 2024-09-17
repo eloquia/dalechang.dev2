@@ -25,9 +25,9 @@ export default function UntitledFinanceApp() {
           <p className="text-2xl text-slate-100">Untitled Personal Finance App</p>
         </div>
         <div className="project-dates flex flex-row gap-1">
-          <p className="text-sm italic text-slate-400 mb-2">2024 - Ongoing</p>
+          <p className="text-sm italic text-slate-700 dark:text-slate-400 mb-2">2024 - Ongoing</p>
         </div>
-        <p className="mb-4 text-slate-400 prose">Developed a personal finance app that displays available spending from a budget.</p>
+        <p className="mb-4 text-slate-700 dark:text-slate-400 prose">Developed a personal finance app that displays available spending from a budget.</p>
         <BadgeCollectionComponent badges={notableTechnologies} />
       </div>
       <div className="mockup-phone">
