@@ -66,7 +66,7 @@ export default function RootLayout({
                 <p>Copyright © 2024 - Dale Chang</p>
               </aside>
               <aside>
-                Looking for the <a className="external-link text-violet-700 dark:text-slate-100 hover:underline hover:text-slate-400" href="https://v1.dalechang.dev" target="_blank" rel="noopener noreferrer">first version</a> of this website?
+                Looking for the <a className="external-link text-violet-700 dark:text-slate-100 hover:underline hover:text-slate-400" href="https://github.com/eloquia/dalechang-me" target="_blank" rel="noopener noreferrer">first version</a> of this website?
               </aside>
             </div>
           </footer>
