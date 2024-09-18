@@ -40,7 +40,7 @@ export default function ProjectItemComponent(props: ProjectItem) {
         </div>
       }
       {
-        props.projectImageType === 'desktop' && <div className="mockup-browser border mx-8 bg-base-300 w-72">
+        props.projectImageType === 'desktop' && <div className="mockup-browser border mx-8 bg-base-300 w-80">
           <div className="mockup-browser-toolbar">
             <div className="input">{props.projectLink}</div>
           </div>
