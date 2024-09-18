@@ -22,12 +22,12 @@ export default function UntitledFinanceApp() {
     <div className="flex flex-col gap-8 sm:items-center">
       <div className="text-content px-8 w-80 sm:px-0">
         <div className="flex flex-row items-start">
-          <p className="text-2xl text-slate-100">Untitled Personal Finance App</p>
+          <p className="text-2xl text-slate-800 dark:text-slate-100">Untitled Personal Finance App</p>
         </div>
         <div className="project-dates flex flex-row gap-1">
-          <p className="text-sm italic text-slate-700 dark:text-slate-400 mb-2">2024 - Ongoing</p>
+          <p className="text-sm italic text-slate-600 dark:text-slate-400 mb-2">2024 - Ongoing</p>
         </div>
-        <p className="mb-4 text-slate-700 dark:text-slate-400 prose">Developed a personal finance app that displays available spending from a budget.</p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400 prose">Developed a personal finance app that displays available spending from a budget.</p>
         <BadgeCollectionComponent badges={notableTechnologies} />
       </div>
       <div className="mockup-phone">
