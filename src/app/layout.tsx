@@ -22,13 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} font-sans`}>
-        <main className="flex flex-col min-h-screen justify-between lg:w-screen lg:grid lg:grid-cols-2">
+        <main className="flex flex-col min-h-screen justify-between lg:w-full lg:grid lg:grid-cols-2">
 
           <div className="flex flex-col items-center md:pt-12 md:px-12 lg:px-0 lg:grid lg:grid-cols-2 lg:col-span-2">
             {children}
           </div>
 
-          <footer className="footer footer-center p-10 bg-base-200 text-base-content lg:bg-transparent lg:grid-cols-1 lg:col-span-2 lg:flex lg:flex-row lg:justify-center lg:bg-base-200">
+          <footer className="footer footer-center p-6 bg-base-200 text-base-content lg:p-10 lg:bg-transparent lg:grid-cols-1 lg:col-span-2 lg:flex lg:flex-row lg:justify-center lg:bg-base-200">
             <div className="w-80 flex flex-col gap-8 lg:col-start-2">
               <aside>
                 <p className="">Scaffolded with <ExternalLink externalLink="https://nextjs.org" displayText="Next.js" />, styled with <ExternalLink externalLink="https://tailwindcss.com" displayText="Tailwind CSS" />, written in <ExternalLink externalLink="https://www.typescriptlang.org" displayText="TypeScript" /> and <ExternalLink externalLink="https://code.visualstudio.com" displayText="VSCode" /></p>
@@ -66,7 +66,7 @@ export default function RootLayout({
                 <p>Copyright © 2024 - Dale Chang</p>
               </aside>
               <aside>
-                Looking for the <a className="external-link text-violet-700 dark:text-slate-100 hover:underline hover:text-slate-400" href="https://v1.dalechang.dev" target="_blank" rel="noopener noreferrer">first version</a> of this website?
+                Looking for the <a className="external-link text-violet-700 dark:text-slate-100 hover:underline hover:text-slate-400" href="https://github.com/eloquia/dalechang-me" target="_blank" rel="noopener noreferrer">first version</a> of this website?
               </aside>
             </div>
           </footer>

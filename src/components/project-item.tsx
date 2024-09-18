@@ -10,13 +10,13 @@ export default function ProjectItemComponent(props: ProjectItem) {
     <div className="mb-12 flex flex-col gap-8 items-center sm:mb-16 sm:gap-0">
       <div className="text-content w-80 sm:mb-8 lg:w-96">
         <div className="flex flex-row items-start">
-          <p className="text-2xl text-slate-100">{props.projectName}</p>
+          <p className="text-2xl text-slate-800 dark:text-slate-100">{props.projectName}</p>
         </div>
         <div className="project-dates flex flex-row gap-1">
           {
             props.isCompleted
-              ? <p className="text-sm italic text-slate-700 dark:text-slate-400 mb-2">{props.startYear}, Finished</p>
-              : <p className="text-sm italic text-slate-700 dark:text-slate-400 mb-2">{props.startYear} - Ongoing</p>
+              ? <p className="text-sm italic text-slate-600 dark:text-slate-400 mb-2">{props.startYear}, Finished</p>
+              : <p className="text-sm italic text-slate-600 dark:text-slate-400 mb-2">{props.startYear} - Ongoing</p>
           }
         </div>
         <p className="mb-4 text-slate-700 dark:text-slate-400">{props.description}</p>
@@ -32,7 +32,7 @@ export default function ProjectItemComponent(props: ProjectItem) {
                 alt={props.projectImageAlt}
                 width="0"
                 height="0"
-                sizes="100vw"
+                sizes="100%"
                 className="h-auto w-full"
               />
             </div>
@@ -50,7 +50,7 @@ export default function ProjectItemComponent(props: ProjectItem) {
               alt={props.projectImageAlt}
               width="0"
               height="0"
-              sizes="100vw"
+              sizes="100%"
               className="h-auto w-full"
             />
           </div>
