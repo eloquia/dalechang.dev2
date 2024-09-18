@@ -9,7 +9,7 @@ export default function DividerWithTextComponent(props: DividerWithTextProps) {
         <div className="w-full border-t border-slate-500"></div>
       </div>
       <div className="relative flex justify-start sm:justify-center">
-        <span className="font-mono bg-slate-900 pr-3 text-base font-semibold leading-6 text-gray-200 sm:pl-3">{props.text}</span>
+        <span className="font-mono rounded-lg bg-slate-900 px-3 text-base font-semibold leading-6 text-gray-200">{props.text}</span>
       </div>
     </div>
   )

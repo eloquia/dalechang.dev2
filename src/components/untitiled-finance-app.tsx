@@ -39,7 +39,7 @@ export default function UntitledFinanceApp() {
                 alt="Image of Untitled Personal Finance App Home Screen Widget"
                 // width="0"
                 // height="0"
-                sizes="100vw"
+                sizes="100%"
                 className="h-auto w-full"
               />
               <Image

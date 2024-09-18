@@ -163,7 +163,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="lg-content w-screen flex flex-col items-center mb-16 lg:grid-cols-1 lg:w-96">
+      <div className="lg-content w-full flex flex-col items-center mb-16 lg:grid-cols-1 lg:w-96">
 
         <div className="about-content flex flex-col mb-16 xl:col-span-1">
           <DividerWithTextComponent text="About" />
@@ -207,13 +207,13 @@ export default function Home() {
           </article>
         </div>
 
-        <div className="latest-projects-content mb-16 w-screen flex flex-col items-center lg:w-96 xl:col-span-2">
+        <div className="latest-projects-content mb-16 flex flex-col items-center lg:w-96 xl:col-span-2">
           <div className="relative mb-8 w-80 lg:w-96">
             <div className="absolute inset-0 flex items-center" aria-hidden="true">
               <div className="w-full border-t border-slate-500"></div>
             </div>
             <div className="relative flex justify-start sm:justify-center">
-              <span className="font-mono bg-slate-900 pr-3 text-base font-semibold leading-6 text-gray-200 sm:pl-3">Latest Projects</span>
+              <span className="font-mono rounded-lg bg-slate-700 dark:bg-slate-900 px-3 text-base font-semibold leading-6 text-gray-200">Latest Projects</span>
             </div>
           </div>
           <ProjectItemComponent {...latestProjects[0]} />
