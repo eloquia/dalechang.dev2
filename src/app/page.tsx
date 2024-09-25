@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import ExternalLink from "@/components/external-link";
 import WorkItemComponent, { WorkItem } from '@/components/work-item';
 import DividerWithTextComponent from '@/components/divider-with-text';
@@ -8,7 +7,8 @@ import UntitledFinanceApp from '@/components/untitiled-finance-app';
 
 import kikisAdventurePic from '../images/kikis-scavenger-hunt.png';
 import mindLabPic from '../images/mindlab-website.png';
-import profilePic from '../images/Dale Chang Profile Costco.jpg';
+// import profilePic from '../images/Dale Chang Profile Costco.jpg';
+import profilePic from '../images/dale-chang-photo.jpeg';
 import climbPic from '../images/pink-v6-v7.png'
 
 const profileImageStyle = {
