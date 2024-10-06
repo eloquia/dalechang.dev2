@@ -176,7 +176,7 @@ export default function Home() {
               <p className="text-slate-800 dark:text-slate-400 sm:text-lg">From the very start, I&apos;ve worked my way up to dreaming of, developing, and delegating large-scale features. I love both green-field and brown-field opportunities and I enjoy finding elegant solutions to complex problems.</p>
             </div>
             <div className="w-80 lg:w-full">
-              <p className="text-slate-800 dark:text-slate-400 sm:text-lg">When I&apos;m not prgramming, I enjoy climbing, learning German, tending <ExternalLink externalLink="https://obsidian.md" displayText="my knowledge garden in Obsidian" />, cooking, and spending time with my wife.</p>
+              <p className="text-slate-800 dark:text-slate-400 sm:text-lg">When I&apos;m not prgramming, I enjoy climbing, learning German, tending <ExternalLink externalLink="https://notes.dalechang.dev" displayText="my knowledge garden in Obsidian" />, cooking, and spending time with my wife.</p>
             </div>
           </article>
         </div>
