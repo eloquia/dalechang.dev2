@@ -158,7 +158,7 @@ export default function Home() {
           >
             Get my Resume
           </a>
-          <p className={`my-8 opacity-50 text-balance text-center text-slate-700`}>
+          <p className={`my-8 opacity-50 text-balance text-center text-slate-200`}>
             I build scalable tech solutions.
           </p>
         </div>
